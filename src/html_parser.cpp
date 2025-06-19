@@ -58,8 +58,8 @@ HTMLElement HTMLParser::parseElement(size_t& index) { // Parse
         else { 
             size_t textStart = index;
             advanceToNextOpenTag(index);
-            std::string rawText = content.substr(textStart, index - textStart); // New-line characters and white spaces between the first and last character of textContent are kept.
-            elementTextContent = trimTrailingWhiteSpace(rawText); // Trim trailing white spaces, starting white spaces are not possible with this code. 
+            std::string rawText = content.substr(textStart, index - textStart); 
+            elementTextContent = removeNewlines(rawText); // Remove all newline characters to improve distinction between hierarchy of elements
         }
     }
     
@@ -101,11 +101,14 @@ void HTMLParser::advanceToNextOpenTag(size_t& index) {
     }
 }
 
-// Trim all trailling white spaces
-std::string HTMLParser::trimTrailingWhiteSpace(const std::string& str) {
-    size_t end = str.find_last_not_of(" \n\r\t");
-    if (end != std::string::npos) { // npos true if str is all white spaces
-        return str.substr(0, end + 1);
+// Trim all new line characters
+std::string HTMLParser::removeNewlines(const std::string& str) {
+    std::string result;
+    
+    for (char c : str) { // Remove all newline characters to improve distinction between hierarchy of elements
+        if (c != '\n' && c != '\r') {
+            result += c;
+        }
     }
-    return "";
+    return result;
 }
