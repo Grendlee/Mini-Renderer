@@ -12,6 +12,13 @@ public:
 
 private:
     std::string content;
+
+    HTMLElement parseElement(size_t& pos);
+    void skipSpace(size_t& index);
+    bool isClosingTag(size_t index) const;
+    void skipToChar(size_t& index, char target);
+    void advanceToNextOpenTag(size_t& index);
+    std::string trimTrailingWhiteSpace(const std::string& str);
 };
 
 #endif // HTML_PARSER_H

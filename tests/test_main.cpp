@@ -13,6 +13,7 @@ int main() {
     head.addChild(title);
     body.addChild(h1);
     body.addChild(p);
+    body.addChild(p);
     html.addChild(head);
     html.addChild(body);
 
