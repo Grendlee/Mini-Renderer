@@ -15,20 +15,23 @@ void HTMLElement::render() const {
 
 void HTMLElement::render_indentations(int indents) const {
 
-    for(int i = 0; i < indents; i++)
-    {
-        cout << " ";
-    }
+    printIndents(indents);
     
-    if(textContent.empty()) { 
+    if(textContent.empty()) { // Print element name and possible textContents
         cout << name << endl;
     }
     else {
         cout << name << ": " << textContent << endl;
     }
 
-    for(const auto& child : children)
+    for(const auto& child : children) // Each child of the parent must contain atleast 1 more indent
     {
         child.render_indentations(indents + 1);
+    }
+}
+
+void HTMLElement::printIndents(int indents) const{
+    for(int i = 0; i < indents; i++) {
+        cout << "  ";
     }
 }
