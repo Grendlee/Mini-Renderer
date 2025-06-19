@@ -12,6 +12,7 @@ public:
 
     void addChild(const HTMLElement& element);
     void render() const;
+    void render_indentations(int indents) const;
 
     [[nodiscard]] std::string_view getName() const noexcept { return name; }
     [[nodiscard]] std::string_view getTextContent() const noexcept { return textContent; }
