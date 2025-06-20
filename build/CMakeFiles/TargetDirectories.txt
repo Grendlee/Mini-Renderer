@@ -1,4 +1,0 @@
-/Users/grantley/Desktop/Mini-Renderer/build/CMakeFiles/mini-renderer.dir
-/Users/grantley/Desktop/Mini-Renderer/build/CMakeFiles/test.dir
-/Users/grantley/Desktop/Mini-Renderer/build/CMakeFiles/edit_cache.dir
-/Users/grantley/Desktop/Mini-Renderer/build/CMakeFiles/rebuild_cache.dir
