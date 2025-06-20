@@ -18,7 +18,6 @@ private:
     bool isClosingTag(size_t index) const;
     void skipToChar(size_t& index, char target);
     void advanceToNextOpenTag(size_t& index);
-    std::string removeNewlines(const std::string& str);
 };
 
 #endif // HTML_PARSER_H

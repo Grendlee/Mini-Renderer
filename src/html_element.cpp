@@ -2,6 +2,7 @@
 #include <string>
 #include <string_view>
 #include "html_element.h"
+#include "utils.h"
 
 using namespace std;
 
@@ -30,8 +31,6 @@ void HTMLElement::render_indentations(int indents) const {
     }
 }
 
-void HTMLElement::printIndents(int indents) const{
-    for(int i = 0; i < indents; i++) {
-        cout << "  ";
-    }
+void HTMLElement::printIndents(int indents) const {
+    PrintUtility::printIndents(indents);
 }

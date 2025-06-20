@@ -2,6 +2,7 @@
 #include <string_view>
 #include <cctype>
 #include "html_parser.h"
+#include "utils.h"
 
 HTMLParser::HTMLParser(std::string_view htmlContent) : content(htmlContent) {}
 
@@ -59,7 +60,7 @@ HTMLElement HTMLParser::parseElement(size_t& index) { // Parse html file and bui
             size_t textStart = index;
             advanceToNextOpenTag(index);
             std::string rawText = content.substr(textStart, index - textStart); 
-            elementTextContent = removeNewlines(rawText); // Remove all newline characters to improve distinction between hierarchy of elements
+            elementTextContent = StringUtility::removeNewlines(rawText); // Remove all newline characters to improve distinction between hierarchy of elements
         }
     }
     
@@ -99,16 +100,4 @@ void HTMLParser::advanceToNextOpenTag(size_t& index) {
     while (index < content.length() && content[index] != '<') {
         index++;
     }
-}
-
-// Trim all new line characters
-std::string HTMLParser::removeNewlines(const std::string& str) {
-    std::string result;
-    
-    for (char c : str) { // Remove all newline characters to improve distinction between hierarchy of elements
-        if (c != '\n' && c != '\r') {
-            result += c;
-        }
-    }
-    return result;
 }
