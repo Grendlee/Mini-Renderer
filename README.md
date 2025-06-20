@@ -1,4 +1,6 @@
-# HTML Mini Renderer
+# Take-Home Assignment: Mini Webpage Renderer
+
+## Introduction
 
 Hi Redbrick team! Here is my submission for the coding task. This is my attempt to showcase what you can expect from me if I were a successful candidate. 
 And of course, I'd be happy to make any changes after a code review! :)
