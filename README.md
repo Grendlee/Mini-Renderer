@@ -28,7 +28,7 @@ And of course, I'd be happy to make any changes after a code review! :)
 
 ### Build
 
-Run CMake with the provided CMakeLists.txt, just as in the project scaffold you shared.”
+Run CMake with the provided CMakeLists.txt, just as in the project scaffold you shared.
 
 ```bash
 cd mini-renderer
