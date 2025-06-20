@@ -11,7 +11,7 @@ HTMLElement HTMLParser::parse() {
     return parseElement(index);
 }
 
-HTMLElement HTMLParser::parseElement(size_t& index) { // Parse
+HTMLElement HTMLParser::parseElement(size_t& index) { // Parse html file and build objects of HTMLElement
 
     skipSpace(index); // Skip spaces
 
