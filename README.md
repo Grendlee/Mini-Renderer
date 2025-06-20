@@ -22,8 +22,8 @@ And of course, I'd be happy to make any changes after a code review! :)
 
 
 ## Time complexity
-html_parser: O(n), where n is the number of characters in the HTML document.
-html_element: O(n), where n is the number of HTMLElement objects.
+- html_parser: O(n), where n is the number of characters in the HTML document.
+- html_element: O(n), where n is the number of HTMLElement objects.
 
 
 ### Build
