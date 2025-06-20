@@ -10,7 +10,7 @@ And of course, I'd be happy to make any changes after a code review! :)
 - The HTMLElement class builds and outputs an HTML DOM tree similar to your provided example. 
 - The HTMLParser walks through the HTML file character by character, using helper functions to keep parsing logic modular.
 - The HTML content is stored as a const reference to ensure it remains immutable during parsing.
-- The utils.h module provides html_element and html_parser with reusable utility functions. 
+- The utils.h module provides HTMLElement and HTMLParser with reusable utility functions. 
 
 ## Limitations
 - Child elements are stored as copies in vectors. While this simplifies memory management and prevents pointer-related bugs, it's less memory-efficient than using smart pointers. For a production system, I would refactor to use `std::unique_ptr<HTMLElement>` for better performance with large documents. 
