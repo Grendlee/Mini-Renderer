@@ -18,7 +18,8 @@ And of course, I'd be happy to make any changes after a code review! :)
 - Does not parse on malformed input correctly.
 - Newline characters are ignored to respect the HTML DOM tree hierarchy.
 - When a parent has text above and below a child: the text above the child is not outputted, the text below the child is.
-  - Example:␣␣
+  - Example:
+
       Input
 
       ```html
