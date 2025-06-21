@@ -15,9 +15,17 @@ And of course, I'd be happy to make any changes after a code review! :)
 ## Limitations
 - Child elements are stored as copies in vectors. While this simplifies memory management and prevents pointer-related bugs, it's less memory-efficient than using smart pointers. For a production system, I would refactor to use `std::unique_ptr<HTMLElement>` for better performance with large documents.
 - By supporting HTML5 spec, the parser does not parse tag names correctly if they contain whitespaces between the opening and closing brackets ('<' and '>').
-- The parser expects all tags to have closing tags.
 - Does not parse on malformed input correctly.
 - Newline characters are ignored to respect the HTML DOM tree hierarchy.
+- When a parent has text above and below a child: the text above the child is not outputted, the text below the child is.
+    Example:
+            ```
+            <body>
+                Text NOT outputted
+                <p>This is test paragraph three.</p>
+                Text outputted
+              </body>
+            ```
 - Whitespaces are ignored unless between the first and last visible character of the textContent of an HTMLElement.
 
 
