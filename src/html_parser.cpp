@@ -60,7 +60,7 @@ HTMLElement HTMLParser::parseElement(size_t& index) { // Parse html file and bui
             size_t textStart = index;
             advanceToNextOpenTag(index);
             std::string rawText = content.substr(textStart, index - textStart); 
-            elementTextContent = StringUtility::removeNewlines(rawText); // Remove all newline characters to improve distinction between hierarchy of elements
+            elementTextContent += StringUtility::removeNewlines(rawText); // Append textContent and remove all newline characters to improve distinction between hierarchy of elements
         }
     }
     

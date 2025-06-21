@@ -4,7 +4,7 @@
 
 int main() {
     HTMLElement html("html");
-    HTMLElement head("head");
+    HTMLElement head("he ad");
     HTMLElement title("title", "Test Page");
     HTMLElement body("body");
     HTMLElement h1("h1", "Hello, World!");
