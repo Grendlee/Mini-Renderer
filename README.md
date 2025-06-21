@@ -20,6 +20,7 @@ And of course, I'd be happy to make any changes after a code review! :)
 - When a parent has text above and below a child: the text above the child is not outputted, the text below the child is.
   - Example:
       - Input
+    
             ```html
             <body>
               Text NOT outputted
@@ -28,6 +29,7 @@ And of course, I'd be happy to make any changes after a code review! :)
             </body>
             ```
       - Output
+
             ```
             body: Text outputted    
               p: This is a test paragraph.
