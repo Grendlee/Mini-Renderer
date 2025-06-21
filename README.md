@@ -7,7 +7,7 @@ And of course, I'd be happy to make any changes after a code review! :)
 
 ## Approach and design choices
 
-- The HTMLElement class builds and outputs an HTML DOM tree similar to your provided example. 
+- The HTMLElement class builds and outputs an HTML DOM tree similar to the example you provided. 
 - The HTMLParser walks through the HTML file character by character, using helper functions to keep parsing logic modular.
 - The HTML content is stored as a const reference to ensure it remains immutable during parsing.
 - The utils.h module provides HTMLElement and HTMLParser with reusable utility functions.
