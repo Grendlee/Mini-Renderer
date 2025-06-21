@@ -17,24 +17,6 @@ And of course, I'd be happy to make any changes after a code review! :)
 - By supporting HTML5 spec, the parser does not parse tag names correctly if they contain whitespaces between the opening and closing brackets ('<' and '>').
 - Does not parse on malformed input correctly.
 - Newline characters are ignored to respect the HTML DOM tree hierarchy.
-- When a parent has text above and below a child: the text above the child is not outputted, the text below the child is.
-  - Example:
-
-      Input
-
-      ```html
-            <body>
-              Text NOT outputted
-              <p>This is a test paragraph.</p>
-              Text outputted
-            </body>
-      ```
-      Output
-
-      ```
-            body: Text outputted    
-              p: This is a test paragraph.
-      ```
 - Whitespaces are ignored unless between the first and last visible character of the textContent of an HTMLElement.
 
 
