@@ -20,20 +20,20 @@ And of course, I'd be happy to make any changes after a code review! :)
 - When a parent has text above and below a child: the text above the child is not outputted, the text below the child is.
   - Example:
       - Input
-    
-            ```html
+
+```html
             <body>
               Text NOT outputted
               <p>This is a test paragraph.</p>
               Text outputted
             </body>
-            ```
+```
       - Output
 
-            ```
+```
             body: Text outputted    
               p: This is a test paragraph.
-            ```
+```
 - Whitespaces are ignored unless between the first and last visible character of the textContent of an HTMLElement.
 
 
