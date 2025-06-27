@@ -20,10 +20,10 @@ private:
     
     /**
      * @brief Recursively parses an HTML element starting at the given position
-     * @param pos Current position in the content string, position changes when parsing
+     * @param index Current position in the content string, position changes when parsing
      * @return The parsed HTMLElement with correctly constructed objects that respect hierarchy or empty element if parsing fails
      */
-    HTMLElement parseElement(size_t& pos);
+    HTMLElement parseElement(size_t& index);
 
     /**
      * @brief Skips whitespace characters starting from the current position
