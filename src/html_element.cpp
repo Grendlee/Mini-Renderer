@@ -34,3 +34,7 @@ void HTMLElement::render_indentations(int indents) const {
 void HTMLElement::printIndents(int indents) const {
     PrintUtility::printIndents(indents);
 }
+
+void HTMLElement::setTextContent(const std::string& text){
+    textContent = text;
+}

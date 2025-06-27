@@ -33,9 +33,8 @@ HTMLElement HTMLParser::parseElement(size_t& index) { // Parse html file and bui
     std::string tagName = content.substr(tagNameStart, index - tagNameStart); // Extract tagName
 
     skipToChar(index, '>'); // Index is now one after '>'
-    
-    std::vector<HTMLElement> elementChildren; // Nested tags are children of this element
-    std::string elementTextContent; 
+
+    HTMLElement element(tagName, ""); // Create element with empty textContent first
     
     while (index < content.length()) { // Parse textContent and child elements
         skipSpace(index);
@@ -53,21 +52,15 @@ HTMLElement HTMLParser::parseElement(size_t& index) { // Parse html file and bui
         if (content[index] == '<') { // Continue to parse child if there is another opening tag: '<'
             HTMLElement child = parseElement(index); 
             if (!child.getName().empty()) { // Check to ensure elementChildren has valid elements
-                elementChildren.push_back(child);
+                element.addChild(child); // directly add child without temp storage
             }
         }
         else { 
             size_t textStart = index;
             advanceToNextOpenTag(index);
             std::string rawText = content.substr(textStart, index - textStart); 
-            elementTextContent += StringUtility::removeNewlines(rawText); // Append textContent and remove all newline characters to improve distinction between hierarchy of elements
+            element.setTextContent(StringUtility::removeNewlines(rawText)); // Set textContent and remove all newline characters to improve distinction between hierarchy of elements
         }
-    }
-    
-    // Construct the element with its tagName, textContent, and children
-    HTMLElement element(tagName, elementTextContent); 
-    for (const auto& child : elementChildren) {
-        element.addChild(child);
     }
     
     return element;

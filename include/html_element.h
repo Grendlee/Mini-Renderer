@@ -6,6 +6,9 @@
 #include <vector>
 
 class HTMLElement {
+
+    friend class HTMLParser; // HTMLParser can access private members
+
 public:
     HTMLElement(std::string_view name, std::string_view textContent = "")
         : name(name), textContent(textContent) {}
@@ -36,7 +39,16 @@ private:
      * @param indents Number of indentation levels for this element
      */
     void render_indentations(int indents) const;
+    
+    // util function from utils.h
     void printIndents(int indents) const;
+
+    /**
+     * Sets the text content of this HTML element after construction.
+     * This overwrites any existing text content.
+     * @param text The new text content to assign to this element
+     */
+    void setTextContent(const std::string& text);
 };
 
 #endif // HTML_ELEMENT_H
